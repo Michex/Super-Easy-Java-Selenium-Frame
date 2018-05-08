@@ -4,8 +4,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class SimpleTest {
-    private WebDriver driver;
+public class SimpleTest extends TestBase {
 
     @BeforeTest
     public void doBeforeTest() {
