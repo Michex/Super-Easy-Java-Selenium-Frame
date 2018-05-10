@@ -1,2 +1,3 @@
-SimpleTest.class
-TestBase.class
+tests/SimpleTest.class
+tests/TestBase.class
+config/ConfigFileReader.class
