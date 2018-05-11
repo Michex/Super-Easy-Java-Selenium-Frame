@@ -9,7 +9,7 @@ public class GoogleSearchTest extends TestBase {
     @Test
     public void doTestMagic() {
 
-        String searchValue = "dupa";
+        String searchValue = data.getSearchValue();
 
         GoogleHomePage googleHomePage = new GoogleHomePage(driver);
         googleHomePage.fillSearchField(searchValue);

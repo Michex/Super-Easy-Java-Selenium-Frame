@@ -1,0 +1,8 @@
+{
+  "Config": {
+    "Url": "http://google.pl"
+  },
+  "TestData": {
+    "searchValue": "dupa"
+  }
+}

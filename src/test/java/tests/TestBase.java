@@ -1,22 +1,24 @@
 package tests;
 
-import config.ConfigFileReader;
+import data.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.io.IOException;
+
 public class TestBase {
 
-    protected ConfigFileReader config;
     protected WebDriver driver;
+    protected Data data;
 
     @BeforeTest
-    public void openBrowserAndUrl() {
+    public void openBrowserAndUrl() throws IOException {
 
-        config = new ConfigFileReader();
+        data = Data.get();
         driver = new FirefoxDriver();
-        driver.get(config.getURL());
+        driver.get(data.getUrl());
 
     }
 
