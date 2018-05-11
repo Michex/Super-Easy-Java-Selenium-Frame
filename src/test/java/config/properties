@@ -3,5 +3,4 @@ TestSuite_SHEETNAME1=RegressionSuite
 
 Browser = Firefox
 Url = http://xsolve.pl
-Driver_path = ../drivers
 Implicitly_wait = 10
