@@ -1,6 +1,3 @@
-TestCase_SheetName=TestCaseSheet
-TestSuite_SHEETNAME1=RegressionSuite
-
 Browser = Firefox
-Url = http://xsolve.pl
+Url = http://google.pl
 Implicitly_wait = 10
