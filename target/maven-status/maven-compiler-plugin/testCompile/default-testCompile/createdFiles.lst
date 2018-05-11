@@ -1,3 +1,6 @@
-tests/SimpleTest.class
 tests/TestBase.class
 config/ConfigFileReader.class
+tests/SimpleTest.class
+config/WebdriverConfig.class
+pages/SimplePage.class
+pages/BasePage.class
