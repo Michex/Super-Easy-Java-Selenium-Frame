@@ -24,4 +24,7 @@ hs_err_pid*
 */target/**
 target
 */.idea/**
+.idea
+
 Tests.iml
+testngWorkout.iml
