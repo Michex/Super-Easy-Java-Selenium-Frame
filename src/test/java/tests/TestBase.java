@@ -1,6 +1,6 @@
 package tests;
 
-import data.Data;
+import config.Config;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -11,14 +11,15 @@ import java.io.IOException;
 public class TestBase {
 
     protected WebDriver driver;
-    protected Data data;
+    protected Config config;
 
     @BeforeTest
     public void openBrowserAndUrl() throws IOException {
 
-        data = Data.get();
+        config = Config.initConfig();
+
         driver = new FirefoxDriver();
-        driver.get(data.getUrl());
+        driver.get(config.getUrl());
 
     }
 
