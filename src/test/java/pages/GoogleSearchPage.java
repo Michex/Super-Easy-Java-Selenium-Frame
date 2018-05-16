@@ -6,15 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class GoogleSearchPage extends BasePage {
 
-    @FindBy (xpath = "//input[@id='lst-ib'][@value='dupa']")
+
+    @FindBy(xpath = "//input[@id='lst-ib']")
     private WebElement searchValueElement;
 
     public GoogleSearchPage(WebDriver driver) {
         super(driver);
     }
 
-    public void checkSearchingValueNameInField(String searchValue) {
 
+    public void checkSearchingValueNameInField(String searchValue) {
         String valueFromElement = searchValueElement.getAttribute("value");
         compareTwoValues(valueFromElement, searchValue);
     }

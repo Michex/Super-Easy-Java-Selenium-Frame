@@ -6,15 +6,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class GoogleHomePage extends BasePage {
 
-    @FindBy (name = "btnK")
+    @FindBy(name = "btnK")
     private WebElement searchBtn;
 
-    @FindBy (id = "lst-ib")
+    @FindBy(id = "lst-ib")
     private WebElement searchField;
 
     public GoogleHomePage(WebDriver driver) {
         super(driver);
     }
+
 
     public void clickOnTheSearchBtn() {
         searchBtn.click();

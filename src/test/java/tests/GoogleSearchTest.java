@@ -1,7 +1,6 @@
 package tests;
 
 import data.TestData;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.GoogleHomePage;
@@ -9,7 +8,7 @@ import pages.GoogleSearchPage;
 
 import java.io.IOException;
 
-public class GoogleSearchTest extends TestBase {
+public class GoogleSearchTest extends BaseTest {
 
     private TestData testData;
 
@@ -23,10 +22,9 @@ public class GoogleSearchTest extends TestBase {
     @Test(dataProvider = "googleSearchTest")
     public void doTestMagic(String searchValue) {
 
-        driver = new FirefoxDriver();
-        driver.get(config.getUrl());
-        
+
         GoogleHomePage googleHomePage = new GoogleHomePage(driver);
+        googleHomePage.goToPage(config.getUrl());
         googleHomePage.fillSearchField(searchValue);
         googleHomePage.clickOnTheSearchBtn();
 

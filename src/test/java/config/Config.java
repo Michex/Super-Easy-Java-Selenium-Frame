@@ -9,10 +9,16 @@ import java.io.IOException;
 
 public class Config {
 
-    private static String yamlSource = "src/test/java/config/test-config.yaml";
+    private static String yamlSource = "test-config.yaml";
 
     @JsonProperty("url")
     String url;
+
+    @JsonProperty("browser")
+    String browser;
+
+    @JsonProperty("window size")
+    String windowSize;
 
 
     public static Config initConfig() throws IOException {
@@ -25,5 +31,11 @@ public class Config {
     }
 
 
+    public String getBrowser() {
+        return browser;
+    }
 
+    public String getWindowSize() {
+        return windowSize;
+    }
 }

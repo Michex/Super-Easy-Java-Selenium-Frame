@@ -1,9 +1,0 @@
-{
-  "TestData": {
-    "searchValue": "dupa"
-  },
-  "User": {
-    "login": "user",
-    "pass" : "dupa"
-  }
-}
