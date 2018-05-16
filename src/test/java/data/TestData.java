@@ -1,10 +1,8 @@
 package data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import config.Config;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,13 +11,16 @@ import java.io.IOException;
 public class TestData {
 
     private static String yamlSource = "src/test/java/data/testData.yaml";
-    public String searchValue;
 
 
-    @JsonProperty("searchValue")
-    public String getSearchData() {
-        return searchValue;
-    }
+    @JsonProperty("searchValue1")
+    String searchValue1;
+
+    @JsonProperty("searchValue2")
+    String searchValue2;
+
+    @JsonProperty("searchValue3")
+    String searchValue3;
 
     public static TestData initTestData() throws IOException {
 
@@ -28,5 +29,15 @@ public class TestData {
 
     }
 
+    public String getSearchValue1() {
+        return searchValue1;
+    }
 
+    public String getSearchValue2() {
+        return searchValue2;
+    }
+
+    public String getSearchValue3() {
+        return searchValue3;
+    }
 }

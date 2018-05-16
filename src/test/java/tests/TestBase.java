@@ -18,8 +18,7 @@ public class TestBase {
 
         config = Config.initConfig();
 
-        driver = new FirefoxDriver();
-        driver.get(config.getUrl());
+
 
     }
 
