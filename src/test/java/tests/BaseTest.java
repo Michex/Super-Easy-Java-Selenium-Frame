@@ -3,17 +3,18 @@ package tests;
 import config.Config;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-    protected Config config;
+    public WebDriver driver;
+    public Config config;
 
     @BeforeTest
     public void setup() throws Exception {
@@ -21,13 +22,11 @@ public class BaseTest {
         config = Config.initConfig();
         String browser = config.getBrowser();
 
-        if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-        } else if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-        } else {
-            throw new Exception("Browser is not correct");
-        }
+        DesiredCapabilities capability = new DesiredCapabilities();
+        capability.setBrowserName(browser);
+
+        String seleniumServer = "http://" + config.getSeleniumUrl() + ":" + config.getSeleniumPort() + "/wd/hub";
+        driver = new RemoteWebDriver(new URL(seleniumServer), capability);
 
         String windowSize = config.getWindowSize();
 

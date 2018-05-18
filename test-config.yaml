@@ -1,3 +1,7 @@
 url: http://google.com
-browser: Firefox
-window size: maximize #widthxheight or maximize
+browser: firefox # android, chrome, firefox, htmlunit, internet explorer, iPhone, iPad, opera, safari
+window size: maximize # widthxheight or maximize
+
+selenium server:
+ url: localhost #E.G. http://localhost:4444/wd/hub, http://192.168.10.21:5568/wd/hub
+ port: 4444

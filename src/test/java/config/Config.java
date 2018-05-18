@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 public class Config {
 
@@ -20,6 +21,8 @@ public class Config {
     @JsonProperty("window size")
     String windowSize;
 
+    @JsonProperty("selenium server")
+    Map<String, String> seleniumServer;
 
     public static Config initConfig() throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
@@ -37,5 +40,15 @@ public class Config {
 
     public String getWindowSize() {
         return windowSize;
+    }
+
+    public String getSeleniumUrl() {
+        String seleniumUrl = seleniumServer.get("url");
+        return seleniumUrl;
+    }
+
+    public String getSeleniumPort() {
+        String seleniumPort = seleniumServer.get("port");
+        return seleniumPort;
     }
 }
