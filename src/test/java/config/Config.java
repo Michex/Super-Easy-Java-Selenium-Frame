@@ -21,6 +21,9 @@ public class Config {
     @JsonProperty("window size")
     String windowSize;
 
+    @JsonProperty("implicitly wait")
+    int waitTime;
+
     @JsonProperty("selenium server")
     Map<String, String> seleniumServer;
 
@@ -50,5 +53,9 @@ public class Config {
     public String getSeleniumPort() {
         String seleniumPort = seleniumServer.get("port");
         return seleniumPort;
+    }
+
+    public int getWaitTime() {
+        return waitTime;
     }
 }
