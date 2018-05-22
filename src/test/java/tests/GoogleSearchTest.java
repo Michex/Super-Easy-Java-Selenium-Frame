@@ -1,6 +1,7 @@
 package tests;
 
-import data.TestData;
+import core.BaseTest;
+import data.SearchValuesData;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.GoogleHomePage;
@@ -10,18 +11,18 @@ import java.io.IOException;
 
 public class GoogleSearchTest extends BaseTest {
 
-    private TestData testData;
+    private SearchValuesData searchValuesData;
 
     @DataProvider(name = "googleSearchTest")
     public Object[][] createData() throws IOException {
-        testData = TestData.initTestData();
-        return new Object[][]{{testData.getSearchValue1()}, {testData.getSearchValue2()}, {testData.getSearchValue3()}
+        searchValuesData = SearchValuesData.initTestData();
+        return new Object[][]{{searchValuesData.getSearchValue1()}, {searchValuesData.getSearchValue2()}, {searchValuesData.getSearchValue3()}
         };
     }
 
+
     @Test(dataProvider = "googleSearchTest")
     public void doTestMagic(String searchValue) {
-
 
         GoogleHomePage googleHomePage = new GoogleHomePage(driver);
         googleHomePage.goToPage(config.getUrl());

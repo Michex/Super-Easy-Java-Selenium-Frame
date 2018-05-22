@@ -8,9 +8,9 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class TestData {
+public class SearchValuesData {
 
-    private static String yamlSource = "src/test/java/data/testData.yaml";
+    private static String yamlSource = "src/test/java/data/searchValues.yaml";
 
 
     @JsonProperty("searchValue1")
@@ -22,10 +22,10 @@ public class TestData {
     @JsonProperty("searchValue3")
     String searchValue3;
 
-    public static TestData initTestData() throws IOException {
+    public static SearchValuesData initTestData() throws IOException {
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return mapper.readValue(new File(yamlSource), TestData.class);
+        return mapper.readValue(new File(yamlSource), SearchValuesData.class);
 
     }
 
